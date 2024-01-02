@@ -16,5 +16,9 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+import "cypress-real-events/support";    // for handling the mouse hover elements
+
+import 'cypress-mochawesome-reporter/register';  // For generating the mocha-html-report
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
