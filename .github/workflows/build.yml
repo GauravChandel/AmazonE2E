@@ -27,17 +27,15 @@ jobs:                       #this job is single but add to cart run and register
            path: cypress/reports/html  #giving the path of which folder needs to be upload   
 
 
-
-
-    #   - name: Slack Notification
-    #     if: always()
-    #     uses: rtCamp/action-slack-notify@v2
-    #     env:
-    #         SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
-    #         SLACK_ICON: https://github.com/rtCamp.png?size=48
-    #         SLACK_MESSAGE: 'Test Automation Report https://github.com/GauravChandel/YY/actions/${{github.run_id}}'
-    #         SLACK_TITLE: Cypress Web Test
-    #         SLACK_WEBHOOK: ${{ secrets.Slack_Webhook }}  # slack_webhook is a varibale which is created on git -> settting -> secret & variable -> Actions -> new repo secrect -> then any name and the URL of slack channel of slack inetgration
+      - name: Slack Notification
+        if: always()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+            SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+            SLACK_ICON: https://github.com/rtCamp.png?size=48
+            SLACK_MESSAGE: 'Test Automation Report https://github.com/GauravChandel/AmazonE2E/actions/${{github.run_id}}'
+            SLACK_TITLE: Cypress Amazon Test Cases
+            SLACK_WEBHOOK: ${{ secrets.Slack_Webhook }}  # slack_webhook is a varibale which is created on git -> settting -> secret & variable -> Actions -> new repo secrect -> then any name and the URL of slack channel of slack inetgration
        
 
 #   Regitser-Flow: 
