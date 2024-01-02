@@ -13,11 +13,11 @@ singinsubmit: '#signInSubmit'
 
 }
 
-OpenURL(){
+OpenTheURL(){
     cy.visit('')    // we are getting the value here from config.js file
 }
 
-clickonsignin(){
+clickOnSignInButton(){
     cy.contains('Hello, sign in').click() 
 }
 
@@ -34,7 +34,7 @@ PasswordFill(passwordtype){
     cy.get(this.weblocator.password).type(passwordtype)
 }
 
-Clickcheckbox(){
+ClickOnCheckbox(){
     cy.get(this.weblocator.checbox).check()
 }
 

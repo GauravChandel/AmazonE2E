@@ -6,13 +6,12 @@ import cred from '../fixtures/LoginCred.json'
 
 describe('User Log in with its credentials', () => {
   it('Login the user', () => {
-      loginuser.OpenURL()
-      loginuser.clickonsignin()
+      loginuser.OpenTheURL()
+      loginuser.clickOnSignInButton()
       loginuser.EmailFill(cred.login.email)
       loginuser.Continue()
       loginuser.PasswordFill(cred.login.password)
-      loginuser.Clickcheckbox()
-      loginuser.Clickcheckbox()
+      loginuser.ClickOnCheckbox()
       loginuser.SignInclick()
       cy.url().should('include', 'https://www.amazon.in/')
       // cy.get('#nav-logo-sprites').wait(1000).should("have.attr", "href").and("not.be.empty")
