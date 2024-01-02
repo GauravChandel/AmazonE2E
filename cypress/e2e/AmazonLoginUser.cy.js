@@ -14,7 +14,8 @@ describe('Check the flow of add to cart', () => {
       loginuser.Clickcheckbox()
       loginuser.Clickcheckbox()
       loginuser.SignInclick()
-      cy.get('#nav-logo-sprites').wait(1000).should("have.attr", "href").and("not.be.empty")
+      cy.url().should('eq', 'https://www.amazon.in/?ref_=nav_ya_signin')
+      // cy.get('#nav-logo-sprites').wait(1000).should("have.attr", "href").and("not.be.empty")
      
   })
 
