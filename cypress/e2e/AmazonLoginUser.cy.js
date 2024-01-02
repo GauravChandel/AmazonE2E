@@ -14,7 +14,7 @@ describe('Check the flow of add to cart', () => {
       loginuser.Clickcheckbox()
       loginuser.Clickcheckbox()
       loginuser.SignInclick()
-      cy.get('#nav-logo-sprites').should("have.attr", "href").and("not.be.empty")
+      cy.get('#nav-logo-sprites').wait(1000).should("have.attr", "href").and("not.be.empty")
      
   })
 
