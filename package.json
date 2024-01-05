@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "LoginUser": " npx cypress run --spec cypress/e2e/AmazonLoginUser.cy.js",
+    "AddtoCart": " npx cypress run --spec cypress/e2e/Add_To_cart.cy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
