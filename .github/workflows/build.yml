@@ -3,7 +3,7 @@ name: Regression
 on: push
 
 jobs:                       #this job is single but add to cart run and register is dynamic
-  Login-user:
+  Create-user:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,7 +15,7 @@ jobs:                       #this job is single but add to cart run and register
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-            command: npm run LoginUser    #Login User this name is mentioned in package.json file and its file path 
+            command: npm run createuser    #Create User this name is mentioned in package.json file and its file path 
 
 
      #If you want to upload your html report on CI/CD
@@ -37,39 +37,39 @@ jobs:                       #this job is single but add to cart run and register
             SLACK_TITLE: Cypress Amazon Test Cases
             SLACK_WEBHOOK: ${{ secrets.Slack_Webhook }}  # slack_webhook is a varibale which is created on git -> settting -> secret & variable -> Actions -> new repo secrect -> then any name and the URL of slack channel of slack inetgration
        
-  Add-to-cart:
-    runs-on: ubuntu-latest
+  # Add-to-cart:
+  #   runs-on: ubuntu-latest
           
-    steps:
-          - name: Checkout
-            uses: actions/checkout@v4
+  #   steps:
+  #         - name: Checkout
+  #           uses: actions/checkout@v4
           
-            # Install npm dependencies, cache them correctly
-            # and run all Cypress tests
-          - name: Cypress run
-            uses: cypress-io/github-action@v6
-            with:
-                command: npm run AddtoCart    #Login User this name is mentioned in package.json file and its file path 
-          
-          
-               #If you want to upload your html report on CI/CD
-          - name: Upload the cypress html report on git hub actions
-            if: always()                # Your test report still will be generated if your test cases fails         
-            uses: actions/upload-artifact@v4
-            with:
-                name: Mocha Awesome HTML Report
-                path: cypress/reports/html  #giving the path of which folder needs to be upload   
+  #           # Install npm dependencies, cache them correctly
+  #           # and run all Cypress tests
+  #         - name: Cypress run
+  #           uses: cypress-io/github-action@v6
+  #           with:
+  #               command: npm run AddtoCart    #Login User this name is mentioned in package.json file and its file path 
           
           
-          - name: Slack Notification
-            if: always()
-            uses: rtCamp/action-slack-notify@v2
-            env:
-                SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
-                SLACK_ICON: https://github.com/rtCamp.png?size=48
-                SLACK_MESSAGE: 'Test Automation Report https://github.com/GauravChandel/AmazonE2E/actions/${{github.run_id}}'
-                SLACK_TITLE: Cypress Amazon Test Cases
-                SLACK_WEBHOOK: ${{ secrets.Slack_Webhook }}  # slack_webhook is a varibale which is created on git -> settting -> secret & variable -> Actions -> new repo secrect -> then any name and the URL of slack channel of slack inetgration
+  #              #If you want to upload your html report on CI/CD
+  #         - name: Upload the cypress html report on git hub actions
+  #           if: always()                # Your test report still will be generated if your test cases fails         
+  #           uses: actions/upload-artifact@v4
+  #           with:
+  #               name: Mocha Awesome HTML Report
+  #               path: cypress/reports/html  #giving the path of which folder needs to be upload   
+          
+          
+  #         - name: Slack Notification
+  #           if: always()
+  #           uses: rtCamp/action-slack-notify@v2
+  #           env:
+  #               SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+  #               SLACK_ICON: https://github.com/rtCamp.png?size=48
+  #               SLACK_MESSAGE: 'Test Automation Report https://github.com/GauravChandel/AmazonE2E/actions/${{github.run_id}}'
+  #               SLACK_TITLE: Cypress Amazon Test Cases
+  #               SLACK_WEBHOOK: ${{ secrets.Slack_Webhook }}  # slack_webhook is a varibale which is created on git -> settting -> secret & variable -> Actions -> new repo secrect -> then any name and the URL of slack channel of slack inetgration
 
 
 
