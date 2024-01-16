@@ -9,4 +9,9 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
     },
   },
+  env:{
+    URL:'https://automationpanda.com/2021/12/29/want-to-practice-test-automation-try-these-demo-sites/',
+    AutomationExercise: 'https://automationexercise.com/'
+  },
+
 });

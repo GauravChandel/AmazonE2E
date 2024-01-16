@@ -1,0 +1,21 @@
+{
+
+    "login": {
+        "Fname": "Nitesh Pal",
+        "Email" : "gaurav721799@gmail.com"
+
+    },
+
+    "crt_acc":{
+        "pass" : "Gaurav@123",
+        "F_name": "Gaurav",
+        "L_name" : "Pal",
+        "cmpny" : "Crownsatck",
+        "adrs" : "Noida, Sector 2",
+        "stat"  : "Uttar Pradesh",
+        "cty" : "Noida",
+        "zpcde" : "201301", 
+        "mbnum" : "7310739990"
+    }
+
+}
