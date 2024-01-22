@@ -1,11 +1,5 @@
 {
 
-    "login": {
-        "Fname": "Nishu Pal",
-        "Email" : "gaurav73107399@gmail.com"
-
-    },
-
     "crt_acc":{
         "pass" : "Gaurav@123",
         "F_name": "Gaurav",

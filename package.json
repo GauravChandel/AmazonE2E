@@ -1,21 +1,21 @@
 {
   "name": "amazone2e",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "LoginUser": " npx cypress run --spec cypress/e2e/AmazonLoginUser.cy.js",
     "AddtoCart": " npx cypress run --spec cypress/e2e/Add_To_cart.cy.js",
     "createuser": "npx cypress run --spec  cypress/e2e/AutomationExercise/Register_User.cy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.6.2"
+    "cypress": "^13.6.3"
   },
   "devDependencies": {
-    "cypress-mochawesome-reporter": "^3.8.0"
-  }
+    "cypress-mochawesome-reporter": "^3.8.0",
+    "faker": "^6.6.6"
+  },
+  "description": ""
 }

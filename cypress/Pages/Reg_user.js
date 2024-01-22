@@ -37,6 +37,14 @@ createaccountbutton: 'Create Account'
 
 }
 
+
+remove_acc = {
+
+deleteaccount: ' Delete Account'
+
+}
+
+
 openURL() {
 
     const newURL = Cypress.env('AutomationExercise')
@@ -46,14 +54,26 @@ openURL() {
 
 ClickonSignup_login(){
     cy.contains(this.weblocator.signup_login).click()
-    cy.get('.signup-form').contains('New User Signup!').should('be.visible')
 }
 
-NewUserSignUp(Fname,email ){
-    cy.get(this.weblocator.Name).type(Fname)
-    cy.get(this.weblocator.Email).last().type(email)
+NewUserSignUp(){
+
+    const firstNames = ['John', 'Jane', 'Bob', 'Alice', 'Charlie', 'Eve'];
+  
+    const randomIndex = Math.floor(Math.random() * firstNames.length);
+  
+    const randomFirstName = firstNames[randomIndex];
+  
+    const randomUsername = Math.random().toString(36).substring(7);
+  
+    const randomEmail = `${randomUsername}@example.com`;
+
+
+    cy.get(this.weblocator.Name).type(randomFirstName)
+    cy.get(this.weblocator.Email).last().type(randomEmail)
     cy.get(this.weblocator.Button).click()
 }
+
 
 
 Print_Name_and_Email(){
@@ -72,8 +92,8 @@ FillAccountDeatis(pass, F_name, L_name, cmpny, adrs, stat, cty, zpcde, mbnum){
     cy.get(this.crt_acc.days).select(5)
     cy.get(this.crt_acc.months).select('November')
     cy.get(this.crt_acc.year).select('1998')
-    cy.get(this.crt_acc.newsletter).check()
-    cy.get(this.crt_acc.specialoffers).check()
+    cy.get(this.crt_acc.newsletter).check({force: true})
+    cy.get(this.crt_acc.specialoffers).check({force: true})
 
 
     cy.get(this.crt_acc.firstname).type(F_name)
@@ -86,6 +106,13 @@ FillAccountDeatis(pass, F_name, L_name, cmpny, adrs, stat, cty, zpcde, mbnum){
     cy.get(this.crt_acc.zipcode).type(zpcde)
     cy.get(this.crt_acc.mobilenumber).type(mbnum)
     cy.contains(this.crt_acc.createaccountbutton).click()
+
+}
+
+
+clickondeleteaccount(){
+
+    cy.contains(this.remove_acc.deleteaccount).click()
 
 }
 
