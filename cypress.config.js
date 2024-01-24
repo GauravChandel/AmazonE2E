@@ -11,7 +11,8 @@ module.exports = defineConfig({
   },
   env:{
     URL:'https://automationpanda.com/2021/12/29/want-to-practice-test-automation-try-these-demo-sites/',
-    AutomationExercise: 'https://automationexercise.com/'
+    AutomationExercise: 'https://automationexercise.com/',
+    saucedemo: "https://www.saucedemo.com/"
   },
 
 });

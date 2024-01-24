@@ -36,3 +36,13 @@
 
 // })
 
+
+Cypress.Commands.add('LoginofSauce', (username, password) =>{
+
+
+    cy.visit(Cypress.env('saucedemo'))
+    cy.get('.input_error.form_input').first().type(username)
+    cy.get('.input_error.form_input').last().type(password)
+    cy.get('.submit-button.btn_action').click()
+
+})

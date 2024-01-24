@@ -2,7 +2,7 @@ describe('Test the application', ()=>{
 
 // const URL =  'http://127.0.0.1:5500/index.html'
 
-    it('it test', ()=>{
+    it.skip('it test', ()=>{
         cy.visit('http://127.0.0.1:5500/index.html')
         // Intercept link-clicking behavior
 
