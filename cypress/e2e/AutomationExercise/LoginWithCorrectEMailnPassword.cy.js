@@ -14,5 +14,8 @@ describe(' Login with the Correct Email n Password', ()=>{
         Obj1.ClickonSignup_login()
 
     })
+    it('Tetsing ', ()=>{
+        cy.log('testing')
+    })
 
 })
