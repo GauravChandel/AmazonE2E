@@ -20,6 +20,6 @@ describe('Add to cart any item',()=>{
         obj1.clickonaddtocartbutton()
         cy.get('div>h4.a-alert-heading').eq(5).contains('Added to Cart')
 
-        // Testing
+        // Testing//
     })
 })
